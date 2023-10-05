@@ -74,3 +74,9 @@ body {
     background-color: rgba(255, 221, 221, 0.621);
     border-radius: 10px;
 }
+
+@media (max-width: 30rem) {
+    body {
+      width: 100%; /* Adjust styles for smaller screens */
+    }
+  }
