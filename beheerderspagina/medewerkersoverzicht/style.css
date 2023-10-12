@@ -26,6 +26,12 @@ a {
     .centerOnMobile {
         text-align:center
     }
+
+    .werkrooster {
+        position: relative;
+        width: 4rem;
+        height: 4rem;
+    }
 }
 
 .werkrooster {
