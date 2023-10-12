@@ -1,0 +1,82 @@
+@font-face {
+    font-family: "Roboto";
+    src: url("path/to/roboto-regular.woff2") format("woff2");
+}
+
+a {
+    font-size:14px;
+    font-weight:700
+}
+.superNav {
+    font-size:13px;
+}
+.form-control {
+    outline:none !important;
+    box-shadow: none !important;
+}
+@media screen and (max-width:540px){
+    .centerOnMobile {
+        text-align:center
+    }
+}
+
+body {
+    font-family: "My Custom Font", sans-serif;
+}
+
+.werkrooster {
+    position: relative;
+    /* top: 2rem; */
+    width: 100rem;
+    height: 60rem;
+    left: 25rem;
+    border-radius: 10px;
+    overflow: hidden;
+    display: grid;
+    grid-template-rows: 15rem auto;
+    /* opacity: 40%; */
+}
+
+.current-datum {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: rgba(126, 251, 251, 0.623);
+    width: 14rem;
+    height: 8.5rem;
+    border-radius: 15px;
+    padding-left: 10px;
+    font-size: 1.5rem;
+    margin-top: 6rem;
+}
+
+.datums-text {
+    background-color: rgba(228, 228, 228, 0.392);
+    display: flex;
+    justify-content: center;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 20px;
+    border-radius: 10px;
+    padding: 3rem;
+}
+
+.datums {
+    position: relative;
+    top: 20px;
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto auto;
+    gap: 20px;
+}
+
+.datums > div {
+    padding-top: 50rem;
+    background-color: rgba(255, 221, 221, 0.621);
+    border-radius: 10px;
+}
+
+@media (max-width: 30rem) {
+    body {
+      width: 100%; /* Adjust styles for smaller screens */
+    }
+  }
