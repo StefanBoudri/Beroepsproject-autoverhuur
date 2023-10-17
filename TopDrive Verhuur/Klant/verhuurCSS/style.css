@@ -1,0 +1,96 @@
+body, h1, h2, ul, li {
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+.hero {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 50px;
+}
+.car-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+}
+.car-card {
+    width: calc(33.33% - 20px);
+    margin: 10px;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.car-card img {
+    max-width: 100%;
+    height: auto;
+}
+.my-button {
+    background-color: #0077b6;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.my-button:hover {
+    background-color: #005689;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.navbar {
+    background-color: #333;
+}
+
+.navbar-brand {
+    color: #fff;
+}
+
+.navbar-brand:hover {
+    color: #fff;
+}
+
+.navbar-nav > li > a {
+    color: #fff;
+}
+.navbar-nav > li > a:hover {
+    background-color: #0077b6;
+    color: #fff;
+}
+.dropdown-menu {
+    background-color: #333;
+}
+
+.dropdown-menu > li > a {
+    color: #fff;
+}
+
+.dropdown-menu > li > a:hover {
+    background-color: #0077b6;
+    color: #fff;
+}
+.navbar-form .form-control {
+    background-color: #333;
+    border: none;
+    color: #fff;
+}
+
+.navbar-right > li > a {
+    color: #fff; 
+}
+
+.navbar-right > li > a:hover {
+    color: #0077b6; 
+}

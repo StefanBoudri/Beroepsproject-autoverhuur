@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Medewerkers Overzicht</title>
+    <link rel="stylesheet" href="medewerkers.css">
+</head>
+
+<body>
+
+    <div class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+
+                    <div class="navbar-header">
+                        <button class="navbar-toggle" data-target="#mobile_menu" data-toggle="collapse"><span
+                                class="icon-bar"></span><span class="icon-bar"></span><span
+                                class="icon-bar"></span></button>
+                        <a href="#" class="navbar-brand">TopDriveVerhuur</a>
+                    </div>
+
+                    <div class="navbar-collapse collapse" id="mobile_menu">
+                        <ul class="nav navbar-nav">
+                            <li class="active"><a href="#">Home</a></li>
+                            </li>
+                            <li><a href="#">Welcome</a></li>
+                            <li><a href="#">Services</a></li>
+                            <li><a href="#">Gallery</a></li>
+                            <li><a href="#">Contact Us</a></li>
+                        </ul>
+
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="#"><span class="glyphicon glyphicon-user"></span> Profile</a></li>
+                            <li><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span
+                                        class="glyphicon glyphicon-log-in"></span> Login / Sign Up <span
+                                        class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">Login</a></li>
+                                    <li><a href="#">Sign Up</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="werkrooster">  
+        <p class="werknemers-counter" id="werknemers-counter">6 Werknemers</p>
+
+        <div class="buttons">
+            <button onclick="openAddMember()">Nieuwe Medewerker</button>
+        </div>
+
+        <div class="tabel">
+            <table class="table-tabel">
+                <tr>
+                    <th>Naam</th>
+                    <th>Functie</th>
+                    <th>Email</th>
+                    <th>Datum indienst</th>
+                </tr>
+                <tr id="medewerker1">
+                    <td>Medewerker 1</td>
+                    <td>Verkoper</td>
+                    <td>medewerker1@gmail.com</td>
+                    <td>17-07-2014</td>
+                    <td><button onclick="clickTable('medewerker1')">Verwijder Medewerker</button></td>
+                </tr>
+                <tr id="medewerker2">
+                    <td>Medewerker 2</td>
+                    <td>Verkoper</td>
+                    <td>medewerker2@gmail.com</td>
+                    <td>12-04-2010</td>
+                    <td><button onclick="clickTable('medewerker2')">Verwijder Medewerker</button></td>
+                </tr>
+                <tr id="medewerker3">
+                    <td>Medewerker 3</td>
+                    <td>Manager</td>
+                    <td>medewerker3@gmail.com</td>
+                    <td>06-06-2020</td>
+                    <td><button onclick="clickTable('medewerker3')">Verwijder Medewerker</button></td>
+                </tr>
+                <tr id="medewerker4">
+                    <td>Medewerker 4</td>
+                    <td>Teamleider</td>
+                    <td>medewerker5@gmail.com</td>
+                    <td>05-20-2019</td>
+                    <td><button onclick="clickTable('medewerker4')">Verwijder Medewerker</button></td>
+                </tr>
+                <tr id="medewerker5">
+                    <td>Medewerker 5</td>
+                    <td>verkoper</td>
+                    <td>medewerker5@gmail.com</td>
+                    <td>01-03-2010</td>
+                    <td><button onclick="clickTable('medewerker5')">Verwijder Medewerker</button></td>
+                </tr>
+                <tr id="medewerker6">
+                    <td>Medewerker 6</td>
+                    <td>verkoper</td>
+                    <td>medewerker6@gmail.com</td>
+                    <td>09-06-2013</td>
+                    <td><button onclick="clickTable('medewerker6')">Verwijder Medewerker</button></td>
+                </tr>
+              </table>
+        </div>
+    </div>
+
+    <div id="add-new-user" style="display:none">
+        <i class="fa-solid fa-x" onclick="closeAddMember()"></i>
+        <div>
+            <p>Naam</p>
+            <input id="naam-input" type="text">
+        </div>
+        <div>
+            <p>Functie</p>
+            <input id="functie-input" type="text">
+        </div>
+        <div>
+            <p>Email</p>
+            <input type="email" id="email-input">
+        </div>
+        <div>
+            <p>Datum Indienst</p>
+            <input id="datum-input" type="date">
+        </div>
+        <div>
+            <button class="add-medewerker" onclick="addNewMember()">Medewerker Toevoegen</button>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <script>
+        let memberAdded = 6
+        let inAnimation = false
+
+        function clickTable(row) {
+            const element = document.getElementById(row);
+            element.remove();
+            memberAdded -= 1
+            document.getElementById("werknemers-counter").innerHTML = memberAdded + " Werknemers"
+        }
+
+        function openAddMember() {
+            if (inAnimation) {
+                return
+            }
+
+            $("#add-new-user").show()
+            $("#add-new-user").animate({bottom: '300px'}, 'slow')
+        }
+
+        function closeAddMember() {
+            inAnimation = true
+            $("#add-new-user").animate({top: '200px'}, 'slow')
+            setTimeout(() => {
+                const el = document.getElementById("add-new-user")
+                el.attributeStyleMap.clear()  
+                $("#add-new-user").hide()  
+                inAnimation = false
+            }, 1000);
+        }
+
+        function addNewMember() {
+            memberAdded += 1
+            let naam = document.getElementById("naam-input").value;
+            let functie = document.getElementById("functie-input").value;
+            let email = document.getElementById("email-input").value;
+            let datum = document.getElementById("datum-input").value;
+            var div = document.getElementsByClassName("table-tabel")
+            var table = document.createElement('tr')
+                $(table).addClass('medewerker' + memberAdded)
+                $(table).attr('id', 'medewerker' + memberAdded)
+                .html("<td>" + naam + "</td><td>" + functie + "</td><td>" + email + "</td><td>" + datum + "</td><td><button onclick='clickTable(\"medewerker" + memberAdded + "\")'>Verwijder Medewerker</button></td>")
+                .appendTo(div)
+
+            closeAddMember()
+
+            document.getElementById("werknemers-counter").innerHTML = memberAdded + " Werknemers"
+        }
+    </script>
+</body>
+
+</html>
